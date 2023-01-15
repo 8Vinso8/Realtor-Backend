@@ -6,17 +6,20 @@ from django.utils import timezone
 class Advert(models.Model):
     owner = models.ForeignKey(settings.AUTH_USER_MODEL,
                               on_delete=models.CASCADE, related_name='adverts')
+                              
+    title = models.TextField(blank=False)
     address = models.TextField(max_length=200, blank=False)
     description = models.TextField(blank=True)
+    
     date = models.DateField(default=timezone.now)
     price = models.IntegerField(blank=False)
     preview = models.ImageField()
-
+    
     class Meta:
       ordering = ['date']
     
     def __str__(self) -> str:
-       return self.address
+       return self.title
 
 
 class AdvertImage(models.Model):
