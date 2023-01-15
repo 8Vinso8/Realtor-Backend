@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('api/admin/', admin.site.urls),
@@ -23,4 +25,5 @@ urlpatterns = [
     path('api/adverts/', include('advert.urls')),
     path('api/auth/', include('djoser.urls')),
     path('api/auth/', include('djoser.urls.authtoken')),
-]
+
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
