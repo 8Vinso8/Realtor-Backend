@@ -13,10 +13,10 @@ class Advert(models.Model):
     preview = models.ImageField()
 
     class Meta:
-      ordering = ['date']
-    
+        ordering = ['date']
+
     def __str__(self) -> str:
-       return self.address
+        return self.address
 
 
 class AdvertImage(models.Model):
