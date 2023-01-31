@@ -10,17 +10,17 @@ class Advert(models.Model):
     title = models.TextField(blank=False)
     address = models.TextField(max_length=200, blank=False)
     description = models.TextField(blank=True)
-    
+
     date = models.DateField(default=timezone.now)
     price = models.IntegerField(blank=False)
     preview = models.ImageField()
-    
+
     class Meta:
         ordering = ['date']
 
     def __str__(self) -> str:
 
-       return self.title
+        return self.title
 
 
 class AdvertImage(models.Model):
