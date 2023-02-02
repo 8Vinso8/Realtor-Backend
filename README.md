@@ -16,6 +16,7 @@ Backend for Realtor Agency "Teplotrassa"
    - phone
    - favorite_adverts - array of adverts (see below)
    - is_realtor - if realtor - then true, else - false
+   - clients - list of clients..
 
 
 ## Adverts
@@ -37,6 +38,7 @@ Backend for Realtor Agency "Teplotrassa"
   - image - array of image links
   - phone - cannot be changed(because user's field)
   - title 
+  - sold - true/false
   - GET Parameters(?)
     - filtering by fields | example: ?id=1&date=2022-10-10
     - favorite - if not null then adds/remove advert to favorite

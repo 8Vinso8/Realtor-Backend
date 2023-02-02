@@ -16,6 +16,7 @@ class AdvertViewSet(viewsets.ModelViewSet):
     def retrieve(self, request, *args, **kwargs):
         instance = self.get_object()
         favorite = self.request.query_params.get('favorite')
+
         user = self.request.user
 
         if favorite:

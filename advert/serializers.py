@@ -27,4 +27,4 @@ class AdvertSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Advert
         fields = ['id', 'url', 'advert_type', 'city', 'street', 'latitude', 'longitude', 'address', 'floor',  'owner', 'price', 'preview',
-                  'address', 'description', 'date', 'images', 'phone', 'title', 'is_favorite']
+                  'address', 'description', 'date', 'images', 'phone', 'title', 'is_favorite', 'sold']

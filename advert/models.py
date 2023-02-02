@@ -23,7 +23,9 @@ class Advert(models.Model):
 
     title = models.TextField(blank=False)
     description = models.TextField(blank=True)
-    
+    sold = models.BooleanField(default=False)
+
+
     date = models.DateField(default=timezone.now)
     price = models.IntegerField(blank=False)
     preview = models.ImageField()
