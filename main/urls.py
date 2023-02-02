@@ -23,6 +23,7 @@ urlpatterns = [
     path('api/admin/', admin.site.urls),
     path('api/users/', include('users.urls')),
     path('api/adverts/', include('advert.urls')),
+    path('api/chat/', include('chat.urls')),
     path('api/auth/', include('djoser.urls')),
     path('api/auth/', include('djoser.urls.authtoken')),
 
