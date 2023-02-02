@@ -16,13 +16,22 @@ Backend for Realtor Agency "Teplotrassa"
    - phone
    - favorite_adverts - array of adverts (see below)
    - is_realtor - if realtor - then true, else - false
+
+
 ## Adverts
 - api/adverts/ - list of adverts
 - api/adverts/**id** - concrete advert
   - id
   - url
+  - is_favorite - if user not logined - false always
   - owner - link for owner user
+  - advert_type (Либо 'Квартира', либо 'Дом', либо 'Земельный участок')
+  - city
+  - street
+  - latitude
+  - longitude
   - address
+  - floor - если это квартира то этаж, если это дом то кол-во этажей, а если участок то null :)
   - description
   - date - YYYY-MM-DD
   - image - array of image links
@@ -33,7 +42,6 @@ Backend for Realtor Agency "Teplotrassa"
     - favorite - if not null then adds/remove advert to favorite
 
 
-  - **`api/adverts/<pk:int>`** - advert detail
 - **`api/chat/`** -- Get all mesages
   - **`api/chat/<pk:int>`** mesage detail
 - **`api/auth/`** - all authentication related endpoints

@@ -4,13 +4,26 @@ from django.utils import timezone
 
 
 class Advert(models.Model):
+    class AdvertType(models.TextChoices):
+        APARTMENT = 'Квартира'
+        HOUSE = 'Дом'
+        Land = 'Земельный участок'
+
+    advert_type = models.CharField(max_length=20, choices=AdvertType.choices, default= AdvertType.Land)
+
+    city = models.TextField(max_length=200, blank=True)
+    street = models.TextField(max_length=200, blank=True)
+    latitude = models.FloatField(null=True) # Широта
+    longitude = models.FloatField(null=True) # Долгота
+    address = models.TextField(max_length=200, blank=False)
+    floor = models.IntegerField(null=True)
+
     owner = models.ForeignKey(settings.AUTH_USER_MODEL,
                               on_delete=models.CASCADE, related_name='adverts')
 
     title = models.TextField(blank=False)
-    address = models.TextField(max_length=200, blank=False)
     description = models.TextField(blank=True)
-
+    
     date = models.DateField(default=timezone.now)
     price = models.IntegerField(blank=False)
     preview = models.ImageField()
