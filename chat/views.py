@@ -8,3 +8,4 @@ class MessageViewSet(viewsets.ModelViewSet):
     queryset = Message.objects.all().order_by('timestamp')
     serializer_class = MessageSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    filterset_fields = ['sender', 'receiver']
