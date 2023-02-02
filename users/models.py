@@ -7,6 +7,7 @@ from advert.models import Advert
 class CustomUser(AbstractUser):
     phone = models.CharField(max_length=30, verbose_name="Телефон", blank=True)
     favorite_adverts = models.ManyToManyField(to=Advert)
+    is_realtor = models.BooleanField(default=False)
     def __str__(self):
         return self.username
 

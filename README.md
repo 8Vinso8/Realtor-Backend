@@ -5,8 +5,17 @@ Backend for Realtor Agency "Teplotrassa"
 ## API endpoints
 
 - **`api/admin/`** - Admin panel
-- **`api/users/`** - Get all users / create new one
-  - **`api/users/<pk:int>/`** - user detail
+
+## Users 
+- api/users/ - list of users, or create new
+  - api/users/**id** - concrete user
+   - id
+   - url
+   - username
+   - email
+   - phone
+   - favorite_adverts - array of adverts (see below)
+   - is_realtor - if realtor - then true, else - false
 ## Adverts
 - api/adverts/ - list of adverts
 - api/adverts/**id** - concrete advert
