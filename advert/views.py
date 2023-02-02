@@ -18,11 +18,13 @@ class AdvertViewSet(viewsets.ModelViewSet):
         favorite = self.request.query_params.get('favorite')
         user = self.request.user
 
-        if favorite == "true":
-            user.favorite_adverts.add(instance)
-        if favorite == "false":
-            user.favorite_adverts.remove(instance)
-            
+        if favorite:
+            if instance in user.favorite_adverts.all(): 
+                user.favorite_adverts.remove(instance) 
+            else :
+             user.favorite_adverts.add(instance)
+        
+
         serializer = self.get_serializer(instance)
         return Response(serializer.data)
 

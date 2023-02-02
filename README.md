@@ -21,7 +21,7 @@ Backend for Realtor Agency "Teplotrassa"
   - title 
   - GET Parameters(?)
     - filtering by fields | example: ?id=1&date=2022-10-10
-    - favorite - if "true" then adds advert to favorite, if  "false" - then delete adverts from favorite
+    - favorite - if not null then adds/remove advert to favorite
 
 
   - **`api/adverts/<pk:int>`** - advert detail
