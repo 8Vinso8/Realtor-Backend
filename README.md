@@ -7,7 +7,23 @@ Backend for Realtor Agency "Teplotrassa"
 - **`api/admin/`** - Admin panel
 - **`api/users/`** - Get all users / create new one
   - **`api/users/<pk:int>/`** - user detail
-- **`api/adverts/`** - Get all adverts / create new one
+## Adverts
+- api/adverts/ - list of adverts
+- api/adverts/**id** - concrete advert
+  - id
+  - url
+  - owner - link for owner user
+  - address
+  - description
+  - date - YYYY-MM-DD
+  - image - array of image links
+  - phone - cannot be changed(because user's field)
+  - title 
+  - GET Parameters(?)
+    - filtering by fields | example: ?id=1&date=2022-10-10
+    - favorite - if "true" then adds advert to favorite, if  "false" - then delete adverts from favorite
+
+
   - **`api/adverts/<pk:int>`** - advert detail
 - **`api/chat/`** -- Get all mesages
   - **`api/chat/<pk:int>`** mesage detail
