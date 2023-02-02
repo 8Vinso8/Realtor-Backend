@@ -8,7 +8,7 @@ Backend for Realtor Agency "Teplotrassa"
 
 ## Users 
 - api/users/ - list of users, or create new
-  - api/users/**id** - concrete user
+- api/users/**id** - concrete user
    - id
    - url
    - username
@@ -28,8 +28,8 @@ Backend for Realtor Agency "Teplotrassa"
   - advert_type (Либо 'Квартира', либо 'Дом', либо 'Земельный участок')
   - city
   - street
-  - latitude
-  - longitude
+  - latitude - широта
+  - longitude - долгота
   - address
   - floor - если это квартира то этаж, если это дом то кол-во этажей, а если участок то null :)
   - description
