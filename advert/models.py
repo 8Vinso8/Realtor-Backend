@@ -9,14 +9,15 @@ class Advert(models.Model):
         HOUSE = 'Дом'
         Land = 'Земельный участок'
 
-    advert_type = models.CharField(max_length=20, choices=AdvertType.choices, default= AdvertType.Land)
+    advert_type = models.CharField(
+        max_length=20, choices=AdvertType.choices, default=AdvertType.Land)
 
     city = models.TextField(max_length=200, blank=True)
     street = models.TextField(max_length=200, blank=True)
-    latitude = models.FloatField(null=True) # Широта
-    longitude = models.FloatField(null=True) # Долгота
-    address = models.TextField(max_length=200, blank=False)
-    floor = models.IntegerField(null=True)
+    latitude = models.FloatField(null=True, blank=True)
+    longitude = models.FloatField(null=True, blank=True)
+    address = models.TextField(max_length=200, blank=True)
+    floor = models.IntegerField(null=True, blank=True)
 
     owner = models.ForeignKey(settings.AUTH_USER_MODEL,
                               on_delete=models.CASCADE, related_name='adverts')
@@ -24,7 +25,6 @@ class Advert(models.Model):
     title = models.TextField(blank=False)
     description = models.TextField(blank=True)
     sold = models.BooleanField(default=False)
-
 
     date = models.DateField(default=timezone.now)
     price = models.IntegerField(blank=False)
