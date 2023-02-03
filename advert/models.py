@@ -20,7 +20,7 @@ class Advert(models.Model):
     floor = models.IntegerField(null=True, blank=True)
 
     owner = models.ForeignKey(settings.AUTH_USER_MODEL,
-                              on_delete=models.CASCADE, related_name='adverts')
+                              on_delete=models.CASCADE, related_name='adverts', default=1)
 
     title = models.TextField(blank=False)
     description = models.TextField(blank=True)
@@ -28,7 +28,7 @@ class Advert(models.Model):
 
     date = models.DateField(default=timezone.now)
     price = models.IntegerField(blank=False)
-    preview = models.ImageField()
+    preview = models.ImageField(blank=True, null=True)
 
     class Meta:
         ordering = ['date']

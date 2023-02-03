@@ -9,7 +9,8 @@ class AdvertFilter(filters.FilterSet):
   advert_type = filters.CharFilter(field_name='advert_type', lookup_expr='exact')
   floor = filters.NumberFilter(field_name='floor', lookup_expr='exact')
   is_sold = filters.BooleanFilter(field_name='sold', lookup_expr='exact')
+  owner = filters.NumberFilter(field_name='owner', lookup_expr='exact')
 
   class Meta:
     model = Advert
-    fields = ['price', 'address', 'city', 'street', 'advert_type', 'floor', 'is_sold']
+    fields = ['price', 'address', 'city', 'street', 'advert_type', 'floor', 'is_sold', 'owner']
