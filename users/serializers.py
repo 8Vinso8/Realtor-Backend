@@ -9,5 +9,5 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
     favorite_adverts = AdvertSerializer(many=True, read_only=True)
     class Meta:
         model = CustomUser
-        fields = ['id', 'url', 'username', 'email', 'phone', 'favorite_adverts', 'is_realtor', 'clients']
+        fields = ['id', 'url', 'username', 'email', 'phone', 'favorite_adverts', 'is_realtor', 'clients', 'avatar']
         

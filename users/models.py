@@ -9,6 +9,7 @@ class CustomUser(AbstractUser):
     favorite_adverts = models.ManyToManyField(to=Advert, blank=True, related_name="favorite_adverts", verbose_name="Избранные объявления")
     is_realtor = models.BooleanField(default=False)
     clients = models.ManyToManyField("self", blank=True)
+    avatar = models.ImageField(upload_to='avatars/', blank=True, null=True)
     def __str__(self):
         return self.username
 
