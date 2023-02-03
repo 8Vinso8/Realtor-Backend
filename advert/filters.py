@@ -7,7 +7,7 @@ class AdvertFilter(filters.FilterSet):
   city = filters.CharFilter(field_name='city', lookup_expr='icontains')
   street = filters.CharFilter(field_name='street', lookup_expr='icontains')
   obj_type = filters.CharFilter(field_name='obj_type', lookup_expr='exact')
-  floor = filters.RangeFilter(field_name='floor')
+  floor = filters.NumberFilter(field_name='floor', lookup_expr='exact')
   is_sold = filters.BooleanFilter(field_name='sold', lookup_expr='exact')
 
   class Meta:
